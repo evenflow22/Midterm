@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'^magazine_list/(?P<magazine_id>[0-9]+)/$', views.magazine_details, name='magazine_details'),
     url(r'^genresearch/$', views.genresearch, name='genresearch'),
     url(r'^genresearchresults/$', views.genresearchresults, name='genresearchresults'),
-    url(r'^genresearchresults/\?genre=(?P<search>\w)$', views.genresearchresults, name='genresearchresults'),
+    #url(r'^genresearchresults/\?genre=(?P<search>\w)$', views.genresearchresults, name='genresearchr
+    url(r'^order_results/$', views.order_results, name='order_results'),
 ]

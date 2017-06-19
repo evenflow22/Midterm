@@ -1,6 +1,6 @@
-from library.models import Book, DVD, Magazine
+from library.models import Book, DVD, Magazine, Rental, User
 from django.shortcuts import render
-
+import datetime
 
 
 def book_list(request):
@@ -49,4 +49,14 @@ def genresearchresults(request):
                     'results3': Book.objects.filter(ISBN=search)}
     return render(request, 'library/genresearchresults.html', context_dict)
 
+
+def order_results(request):
+    item_id = request.GET.get('item_id', "")
+    my_id = request.GET.get('my_id', "")
+    my_borrower = User.objects.get(pk=my_id)
+    my_book = Book.objects.get(pk=item_id)
+    my_rental = Rental(borrower=my_borrower, borrowed_item=my_book, status=1)
+    my_rental.save()
+    context_dict = {"my_book": my_book, "my_borrower": my_borrower}
+    return render(request, 'library/thankyou.html', context_dict)
 

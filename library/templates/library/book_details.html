@@ -19,5 +19,14 @@
     {% else %}
       <p>There are no details on this book.</p>
     {% endif %}
-    <a href="/library/">Index</a><br />
+
+
+<form action="{% url 'order_results' %}" method="get">
+    <input type="hidden" name="item_id" value="{{ book_details.id }}"/>
+    <input type="hidden" name="my_id" value="1"/>
+    <input type="submit" value="order"/>
+
+
+</form>
 {% endblock %}
+    <a href="/library/">Index</a><br />
