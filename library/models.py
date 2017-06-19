@@ -1,5 +1,6 @@
 from django.db import models
-from django.core.urlresolvers import reverse
+from simple_search import search_filter
+
 
 
 class Book(models.Model):
@@ -50,4 +51,3 @@ class Rental(models.Model):
 
     def __str__(self):
         return str(self.borrower) + ' - ' + str(self.borrowed_item) + ' - ' + str(self.status) + ' - ' + str(self.date_due)
-

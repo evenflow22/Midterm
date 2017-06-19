@@ -1,8 +1,7 @@
-from django.shortcuts import render
-from django.template import loader
-from django.http import HttpResponse
-from django.views import generic
 from library.models import Book, DVD, Magazine
+from django.shortcuts import render
+
+
 
 def book_list(request):
     context_dict = {'book_list': Book.objects.all()}
@@ -39,10 +38,15 @@ def index(request):
                     'avail_mags': Magazine.objects.all()}
     return render(request, 'library/index.html', context_dict)
 
+def genresearch(request):
+    context_dict = {}
+    return render(request, 'library/genresearch.html', context_dict)
 
-class BookListView(generic.ListView):
-    model = Book
+def genresearchresults(request):
+    search = request.GET.get('genre',"")
+    context_dict = {'results': Book.objects.filter(genre=search),
+                    'results2': DVD.objects.filter(genre=search),
+                    'results3': Book.objects.filter(ISBN=search)}
+    return render(request, 'library/genresearchresults.html', context_dict)
 
 
-class BookDetailView(generic.DetailView):
-    model = Book

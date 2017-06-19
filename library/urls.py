@@ -9,4 +9,7 @@ urlpatterns = [
     url(r'^dvd_list/(?P<dvd_id>[0-9]+)/$', views.dvd_details, name='dvd_details'),
     url(r'^magazine_list/$', views.magazine_list, name='magazine_list'),
     url(r'^magazine_list/(?P<magazine_id>[0-9]+)/$', views.magazine_details, name='magazine_details'),
+    url(r'^genresearch/$', views.genresearch, name='genresearch'),
+    url(r'^genresearchresults/$', views.genresearchresults, name='genresearchresults'),
+    url(r'^genresearchresults/\?genre=(?P<search>\w)$', views.genresearchresults, name='genresearchresults'),
 ]
