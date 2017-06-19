@@ -1,0 +1,21 @@
+{% extends 'library/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <h1>Magazine List</h1>
+
+    {% if magazine_list %}
+    <ul>
+
+      {% for magazine in magazine_list %}
+      <li>
+          <a href="{{ magazine.id }}">{{ magazine.magazine_title }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no Magazines in the library.</p>
+    {% endif %}
+    <a href="/library/">Index</a><br />
+{% endblock %}

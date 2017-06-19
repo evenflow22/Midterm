@@ -1,0 +1,19 @@
+{% load staticfiles %}
+
+{% block content %}
+    <h1>Magazine Details</h1>
+    {% if magazine_details %}
+
+   Title: {{ magazine_details.magazine_title }} <br><br>
+
+   Publisher: {{ magazine_details.magazine_publisher }} <br><br>
+
+
+   <img src="{% static 'images/' %}{{magazine_details.image }}" alt="{{ magazine_details.dvd_title }}" /><br>
+
+
+    {% else %}
+      <p>There are no details on this book.</p>
+    {% endif %}
+    <a href="/library/">Index</a><br />
+{% endblock %}

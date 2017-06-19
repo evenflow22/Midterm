@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+{% block content %}
+    <h1>DVD Details</h1>
+    {% if dvd_details %}
+
+   Title: {{ dvd_details.dvd_title }} <br><br>
+
+   Director: {{ dvd_details.director }} <br><br>
+
+   Genre: {{ dvd_details.genre }} <br><br>
+
+   <img src="{% static 'images/' %}{{dvd_details.image }}" alt="{{ dvd_details.dvd_title }}" /><br>
+
+
+    {% else %}
+      <p>There are no details on this book.</p>
+    {% endif %}
+    <a href="/library/">Index</a><br />
+{% endblock %}

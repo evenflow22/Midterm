@@ -1,0 +1,18 @@
+{% extends 'library/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<h1>Library Home</h1>
+
+  <p>Welcome to the library</p>
+
+<h2>List of Media We Currently Have</h2>
+
+  <p>Please click on the Media you would like to borrow:</p>
+  <ul>
+      <li><strong><a href='book_list/'>Books</a></strong> </li>
+      <li><strong><a href='dvd_list'>DVDs</a></strong></li>
+      <li><strong><a href='magazine_list'>Magazines</a></strong></li>
+  </ul>
+
+{% endblock %}

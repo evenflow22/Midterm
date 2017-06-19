@@ -19,7 +19,7 @@ print(__file__)
 print(os.path.dirname(__file__))
 print(os.path.dirname(os.path.dirname(__file__)))
 
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'Templates')
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 

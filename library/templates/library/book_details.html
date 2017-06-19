@@ -1,0 +1,23 @@
+{% extends 'library/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <h1>Book Details</h1>
+    {% if book_details %}
+
+   Title: {{ book_details.book_title }} <br><br>
+
+   Author: {{ book_details.author }} <br><br>
+
+   ISBN: {{ book_details.ISBN }} <br><br>
+
+   Genre: {{ book_details.genre }} <br><br>
+
+   <img src="{% static 'images/' %}{{book_details.image }}" alt="{{ book_details.book_title }}" /><br>
+
+
+    {% else %}
+      <p>There are no details on this book.</p>
+    {% endif %}
+    <a href="/library/">Index</a><br />
+{% endblock %}

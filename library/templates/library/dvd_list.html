@@ -1,0 +1,21 @@
+{% extends 'library/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <h1>DVD List</h1>
+
+    {% if dvd_list %}
+    <ul>
+
+      {% for dvd in dvd_list %}
+      <li>
+          <a href="{{ dvd.id }}">{{ dvd.dvd_title}}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no DVDs in the library.</p>
+    {% endif %}
+    <a href="/library/">Index</a><br />
+{% endblock %}
